@@ -3,227 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>STV Betting Tips</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#07110d;
+color:white;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f3f4f6;
-    color: #171717;
+header{
+background:linear-gradient(135deg,#0b2418,#07110d);
+padding:35px 18px;
+text-align:center;
+border-bottom:2px solid #20c66b;
 }
 
-header {
-    background: #111111;
-    color: white;
-    padding: 35px 20px;
-    text-align: center;
+.logo{
+font-size:32px;
+font-weight:900;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 34px;
-    font-weight: 800;
+.logo span{
+color:#20c66b;
 }
 
-header p {
-    margin: 10px 0 0;
-    font-size: 17px;
-    color: #dddddd;
+header p{
+color:#b8c5bf;
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+.container{
+max-width:900px;
+margin:auto;
+padding:18px;
 }
 
-.date {
-    text-align: center;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
+.date{
+text-align:center;
+color:#9daaa4;
+margin-bottom:18px;
 }
 
-.section {
-    background: white;
-    border-radius: 18px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+.section-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:25px 0 12px;
 }
 
-.section h2 {
-    margin-top: 0;
-    font-size: 25px;
+.section-title h2{
+margin:0;
 }
 
-.strong {
-    border-left: 6px solid #ff6b00;
+.card{
+background:#101c17;
+border:1px solid #24352d;
+border-radius:16px;
+padding:18px;
+margin-bottom:14px;
 }
 
-.tip-card {
-    background: #f1f1f1;
-    padding: 18px;
-    border-radius: 14px;
-    margin: 12px 0;
+.competition{
+font-size:12px;
+color:#8fa39a;
+text-transform:uppercase;
 }
 
-.teams {
-    font-size: 18px;
-    font-weight: bold;
+.teams{
+font-size:20px;
+font-weight:800;
+margin:10px 0;
 }
 
-.tip {
-    margin-top: 8px;
-    font-size: 17px;
-    font-weight: bold;
+.time{
+color:#20c66b;
+font-weight:bold;
 }
 
-.confidence {
-    margin-top: 8px;
-    color: #555;
+.tip{
+background:#17251f;
+border-radius:10px;
+padding:12px;
+margin-top:12px;
 }
 
-.badge {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 8px;
+.tip strong{
+color:#20c66b;
 }
 
-.low {
-    background: #d9f7df;
-    color: #08751b;
+.confidence{
+margin-top:12px;
+font-weight:bold;
 }
 
-.medium {
-    background: #fff1bd;
-    color: #8a6500;
+.progress{
+height:8px;
+background:#26362f;
+border-radius:10px;
+margin-top:7px;
+overflow:hidden;
 }
 
-.high {
-    background: #ffd9d9;
-    color: #a00000;
+.progress div{
+height:100%;
+background:#20c66b;
 }
 
-.search {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
-    margin-bottom: 15px;
+.badge{
+display:inline-block;
+padding:6px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+margin-top:10px;
 }
 
-.filters {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
+.green{
+background:#123e27;
+color:#52e996;
 }
 
-.filters button {
-    border: none;
-    background: #111;
-    color: white;
-    padding: 10px 14px;
-    border-radius: 20px;
-    cursor: pointer;
+.yellow{
+background:#493b0b;
+color:#ffd85a;
 }
 
-.filters button:hover {
-    background: #333;
+.analysis{
+color:#b9c5c0;
+line-height:1.5;
+font-size:14px;
+margin-top:12px;
 }
 
-.match {
-    border: 1px solid #e1e1e1;
-    border-radius: 15px;
-    padding: 17px;
-    margin-bottom: 14px;
+.warning{
+background:#29230b;
+border-left:4px solid #f0c52d;
+padding:15px;
+border-radius:10px;
+color:#e8dfb5;
+font-size:13px;
 }
 
-.match-header {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+footer{
+text-align:center;
+padding:28px 15px;
+background:#050b08;
+color:#819089;
+font-size:12px;
+margin-top:30px;
 }
 
-.league {
-    font-size: 13px;
-    color: #777;
-}
-
-.time {
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.prediction {
-    background: #f5f5f5;
-    border-radius: 10px;
-    padding: 12px;
-    margin-top: 12px;
-}
-
-.explain {
-    background: #fafafa;
-    border-radius: 12px;
-    padding: 15px;
-    margin-top: 10px;
-}
-
-.explain strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.warning {
-    background: #fff4d6;
-    border-left: 5px solid #e5a400;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-footer {
-    background: #111;
-    color: #ddd;
-    text-align: center;
-    padding: 25px 15px;
-    margin-top: 30px;
-    font-size: 13px;
-}
-
-.no-results {
-    text-align: center;
-    color: #777;
-    padding: 20px;
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 29px;
-    }
-
-    .container {
-        padding: 12px;
-    }
-
-    .section {
-        padding: 16px;
-    }
-
-    .teams {
-        font-size: 17px;
-    }
+@media(max-width:600px){
+.logo{font-size:27px}
+.teams{font-size:18px}
 }
 </style>
 </head>
@@ -231,261 +166,212 @@ footer {
 <body>
 
 <header>
-    <h1>⚽ STV BETTING TIPS</h1>
-    <p>Smart football predictions & tips</p>
+<div class="logo">STV <span>BETTING TIPS</span> ⚽</div>
+<p>Football predictions & match analysis</p>
 </header>
 
 <div class="container">
 
 <div class="date">
-    📅 <span id="today"></span>
+📅 Wednesday, 19 August 2026
 </div>
 
-<!-- STRONG TIPS -->
-<div class="section strong">
-    <h2>🔥 Today's Strong Tips</h2>
-
-    <div class="tip-card">
-        <div class="teams">⚽ Team A vs Team B</div>
-        <div class="tip">Tip: Over 1.5 Goals</div>
-        <div class="confidence">Confidence: 78%</div>
-        <span class="badge low">LOW RISK</span>
-    </div>
-
-    <div class="tip-card">
-        <div class="teams">⚽ Team C vs Team D</div>
-        <div class="tip">Tip: 1X — Home Win or Draw</div>
-        <div class="confidence">Confidence: 74%</div>
-        <span class="badge medium">MEDIUM RISK</span>
-    </div>
-
-    <div class="tip-card">
-        <div class="teams">⚽ Team E vs Team F</div>
-        <div class="tip">Tip: Under 4.5 Goals</div>
-        <div class="confidence">Confidence: 82%</div>
-        <span class="badge low">LOW RISK</span>
-    </div>
+<div class="section-title">
+<h2>🔥 Today's STV Tips</h2>
 </div>
 
-<!-- SEARCH -->
-<div class="section">
-    <h2>📊 Match Predictions</h2>
+<!-- MATCH 1 -->
+<div class="card">
 
-    <input
-        type="text"
-        id="search"
-        class="search"
-        placeholder="🔎 Search team or league..."
-        onkeyup="searchMatches()"
-    >
+<div class="competition">UEFA Champions League • Play-off</div>
 
-    <div class="filters">
-        <button onclick="filterMatches('all')">All</button>
-        <button onclick="filterMatches('low')">🟢 Low Risk</button>
-        <button onclick="filterMatches('medium')">🟡 Medium</button>
-        <button onclick="filterMatches('high')">🔴 High Risk</button>
-    </div>
-
-    <div id="matches">
-
-        <div class="match" data-risk="low">
-            <div class="match-header">
-                <div>
-                    <div class="league">Premier League</div>
-                    <div class="teams">Team A vs Team B</div>
-                </div>
-                <div class="time">19:00</div>
-            </div>
-
-            <div class="prediction">
-                <strong>Prediction:</strong> Over 1.5 Goals
-                <br>
-                <strong>Confidence:</strong> 78%
-                <br>
-                <span class="badge low">LOW RISK</span>
-            </div>
-        </div>
-
-        <div class="match" data-risk="medium">
-            <div class="match-header">
-                <div>
-                    <div class="league">La Liga</div>
-                    <div class="teams">Team C vs Team D</div>
-                </div>
-                <div class="time">20:30</div>
-            </div>
-
-            <div class="prediction">
-                <strong>Prediction:</strong> 1X
-                <br>
-                <strong>Confidence:</strong> 74%
-                <br>
-                <span class="badge medium">MEDIUM RISK</span>
-            </div>
-        </div>
-
-        <div class="match" data-risk="low">
-            <div class="match-header">
-                <div>
-                    <div class="league">Serie A</div>
-                    <div class="teams">Team E vs Team F</div>
-                </div>
-                <div class="time">21:00</div>
-            </div>
-
-            <div class="prediction">
-                <strong>Prediction:</strong> Under 4.5 Goals
-                <br>
-                <strong>Confidence:</strong> 82%
-                <br>
-                <span class="badge low">LOW RISK</span>
-            </div>
-        </div>
-
-        <div class="match" data-risk="high">
-            <div class="match-header">
-                <div>
-                    <div class="league">Champions League</div>
-                    <div class="teams">Team G vs Team H</div>
-                </div>
-                <div class="time">22:00</div>
-            </div>
-
-            <div class="prediction">
-                <strong>Prediction:</strong> Correct Score 2-1
-                <br>
-                <strong>Confidence:</strong> 35%
-                <br>
-                <span class="badge high">HIGH RISK</span>
-            </div>
-        </div>
-
-    </div>
+<div class="teams">
+Celtic vs LASK
 </div>
 
-<!-- MARKET GUIDE -->
-<div class="section">
-    <h2>📚 Betting Market Guide</h2>
-
-    <div class="explain">
-        <strong>1X</strong>
-        Home team wins OR the match ends in a draw.
-    </div>
-
-    <div class="explain">
-        <strong>X2</strong>
-        Away team wins OR the match ends in a draw.
-    </div>
-
-    <div class="explain">
-        <strong>Over 1.5 Goals</strong>
-        There must be at least 2 goals in the match.
-    </div>
-
-    <div class="explain">
-        <strong>Under 4.5 Goals</strong>
-        There must be 4 goals or fewer.
-    </div>
-
-    <div class="explain">
-        <strong>Both Teams To Score</strong>
-        Both teams must score at least one goal.
-    </div>
+<div class="time">
+⏰ 21:00 CET
 </div>
 
-<!-- WARNING -->
-<div class="section">
-    <div class="warning">
-        ⚠️ <strong>Important:</strong>
-        Predictions are estimates, not guaranteed results.
-        Football can be unpredictable. Never stake money you cannot afford to lose.
-    </div>
+<div class="tip">
+<strong>STV TIP</strong><br>
+Over 1.5 Goals
+</div>
+
+<div class="confidence">
+Confidence: 72%
+</div>
+
+<div class="progress">
+<div style="width:72%"></div>
+</div>
+
+<span class="badge green">
+STV ANALYSIS: FAVORABLE
+</span>
+
+<p class="analysis">
+Celtic are at home in the first leg. A goals-based market
+can be less dependent on picking the exact winner.
+</p>
+
+</div>
+
+
+<!-- MATCH 2 -->
+<div class="card">
+
+<div class="competition">UEFA Champions League • Play-off</div>
+
+<div class="teams">
+Hapoel Beer-Sheva vs Sabah
+</div>
+
+<div class="time">
+⏰ 21:00 CET
+</div>
+
+<div class="tip">
+<strong>STV TIP</strong><br>
+Under 4.5 Goals
+</div>
+
+<div class="confidence">
+Confidence: 75%
+</div>
+
+<div class="progress">
+<div style="width:75%"></div>
+</div>
+
+<span class="badge green">
+STV ANALYSIS: FAVORABLE
+</span>
+
+<p class="analysis">
+This is a first-leg play-off match. A conservative total-goals
+market avoids needing to predict the exact score.
+</p>
+
+</div>
+
+
+<!-- MATCH 3 -->
+<div class="card">
+
+<div class="competition">UEFA Champions League • Play-off</div>
+
+<div class="teams">
+Slovan Bratislava vs Celje
+</div>
+
+<div class="time">
+⏰ 21:00 CET
+</div>
+
+<div class="tip">
+<strong>STV TIP</strong><br>
+Over 1.5 Goals
+</div>
+
+<div class="confidence">
+Confidence: 70%
+</div>
+
+<div class="progress">
+<div style="width:70%"></div>
+</div>
+
+<span class="badge green">
+STV ANALYSIS: FAVORABLE
+</span>
+
+<p class="analysis">
+Both teams reached the play-off round through qualifying.
+The suggested market allows either side to score.
+</p>
+
+</div>
+
+
+<!-- MATCH 4 -->
+<div class="card">
+
+<div class="competition">UEFA Champions League • Play-off</div>
+
+<div class="teams">
+N.E.C. Nijmegen vs Bodø/Glimt
+</div>
+
+<div class="time">
+⏰ 21:00 CET
+</div>
+
+<div class="tip">
+<strong>STV TIP</strong><br>
+Over 1.5 Goals
+</div>
+
+<div class="confidence">
+Confidence: 73%
+</div>
+
+<div class="progress">
+<div style="width:73%"></div>
+</div>
+
+<span class="badge green">
+STV ANALYSIS: FAVORABLE
+</span>
+
+<p class="analysis">
+This league-path first leg is another match where a simple
+goals market avoids relying on an exact match winner.
+</p>
+
+</div>
+
+
+<div class="section-title">
+<h2>📚 Market Guide</h2>
+</div>
+
+<div class="card">
+
+<div class="tip">
+<strong>Over 1.5 Goals</strong><br>
+At least 2 goals must be scored.
+</div>
+
+<div class="tip">
+<strong>Under 4.5 Goals</strong><br>
+The match must finish with 4 goals or fewer.
+</div>
+
+<div class="tip">
+<strong>1X</strong><br>
+Home team wins or the match ends in a draw.
+</div>
+
+</div>
+
+
+<div class="section-title">
+<h2>⚠️ Responsible Betting</h2>
+</div>
+
+<div class="warning">
+STV predictions are analysis, not guarantees. Football results
+are unpredictable. Never stake money you cannot afford to lose.
 </div>
 
 </div>
 
 <footer>
-    <strong>STV Betting Tips</strong>
-    <br><br>
-    Football predictions & educational information.
-    <br>
-    © <span id="year"></span> STV Betting Tips
+<strong>STV BETTING TIPS</strong><br><br>
+Football predictions & analysis<br><br>
+© 2026 STV Betting Tips
 </footer>
-
-<script>
-
-/* Today's date */
-const date = new Date();
-
-document.getElementById("today").textContent =
-    date.toLocaleDateString("en-GB", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-    });
-
-document.getElementById("year").textContent =
-    date.getFullYear();
-
-
-/* Search matches */
-function searchMatches() {
-
-    const search =
-        document.getElementById("search")
-        .value
-        .toLowerCase();
-
-    const matches =
-        document.querySelectorAll(".match");
-
-    let visible = 0;
-
-    matches.forEach(match => {
-
-        const text =
-            match.innerText.toLowerCase();
-
-        if (text.includes(search)) {
-            match.style.display = "block";
-            visible++;
-        } else {
-            match.style.display = "none";
-        }
-
-    });
-
-}
-
-
-/* Risk filter */
-function filterMatches(risk) {
-
-    const matches =
-        document.querySelectorAll(".match");
-
-    matches.forEach(match => {
-
-        if (risk === "all") {
-            match.style.display = "block";
-        }
-
-        else if (
-            match.dataset.risk === risk
-        ) {
-            match.style.display = "block";
-        }
-
-        else {
-            match.style.display = "none";
-        }
-
-    });
-
-}
-
-</script>
 
 </body>
 </html>
