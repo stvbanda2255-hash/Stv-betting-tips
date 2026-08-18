@@ -1,119 +1,491 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STV Betting Tips</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #222;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px 10px;
-    }
+<title>STV Betting Tips</title>
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    color: #171717;
+}
+
+header {
+    background: #111111;
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 17px;
+    color: #dddddd;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.date {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.section {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.strong {
+    border-left: 6px solid #ff6b00;
+}
+
+.tip-card {
+    background: #f1f1f1;
+    padding: 18px;
+    border-radius: 14px;
+    margin: 12px 0;
+}
+
+.teams {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tip {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.confidence {
+    margin-top: 8px;
+    color: #555;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.low {
+    background: #d9f7df;
+    color: #08751b;
+}
+
+.medium {
+    background: #fff1bd;
+    color: #8a6500;
+}
+
+.high {
+    background: #ffd9d9;
+    color: #a00000;
+}
+
+.search {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.filters button {
+    border: none;
+    background: #111;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background: #333;
+}
+
+.match {
+    border: 1px solid #e1e1e1;
+    border-radius: 15px;
+    padding: 17px;
+    margin-bottom: 14px;
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.league {
+    font-size: 13px;
+    color: #777;
+}
+
+.time {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.prediction {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+.explain {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.explain strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.warning {
+    background: #fff4d6;
+    border-left: 5px solid #e5a400;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+footer {
+    background: #111;
+    color: #ddd;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+.no-results {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
     header h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    header p {
-      margin: 8px 0 0;
+        font-size: 29px;
     }
 
     .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
+        padding: 12px;
     }
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #ccc;
+    .section {
+        padding: 16px;
     }
 
-    .card h2 {
-      margin-top: 0;
+    .teams {
+        font-size: 17px;
     }
-
-    .tip {
-      background: #eee;
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 8px;
-    }
-
-    .strong {
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      background: #111;
-      color: white;
-      padding: 20px;
-      margin-top: 30px;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>STV BETTING TIPS</h1>
-  <p>Smart football predictions & tips</p>
+    <h1>⚽ STV BETTING TIPS</h1>
+    <p>Smart football predictions & tips</p>
 </header>
 
 <div class="container">
 
-  <div class="card">
+<div class="date">
+    📅 <span id="today"></span>
+</div>
+
+<!-- STRONG TIPS -->
+<div class="section strong">
     <h2>🔥 Today's Strong Tips</h2>
 
-    <div class="tip">
-      ⚽ Team A vs Team B<br>
-      <span class="strong">Tip: Over 1.5 Goals</span>
+    <div class="tip-card">
+        <div class="teams">⚽ Team A vs Team B</div>
+        <div class="tip">Tip: Over 1.5 Goals</div>
+        <div class="confidence">Confidence: 78%</div>
+        <span class="badge low">LOW RISK</span>
     </div>
 
-    <div class="tip">
-      ⚽ Team C vs Team D<br>
-      <span class="strong">Tip: 1X (Home Win or Draw)</span>
+    <div class="tip-card">
+        <div class="teams">⚽ Team C vs Team D</div>
+        <div class="tip">Tip: 1X — Home Win or Draw</div>
+        <div class="confidence">Confidence: 74%</div>
+        <span class="badge medium">MEDIUM RISK</span>
     </div>
 
-    <div class="tip">
-      ⚽ Team E vs Team F<br>
-      <span class="strong">Tip: Under 4.5 Goals</span>
+    <div class="tip-card">
+        <div class="teams">⚽ Team E vs Team F</div>
+        <div class="tip">Tip: Under 4.5 Goals</div>
+        <div class="confidence">Confidence: 82%</div>
+        <span class="badge low">LOW RISK</span>
     </div>
-  </div>
+</div>
 
-  <div class="card">
+<!-- SEARCH -->
+<div class="section">
     <h2>📊 Match Predictions</h2>
-    <p>We provide football tips and match analysis.</p>
-    <p>Always bet responsibly. No prediction is guaranteed.</p>
-  </div>
 
-  <div class="card">
-    <h2>⭐ About STV</h2>
-    <p>
-      STV Betting Tips provides football predictions,
-      match tips and simple betting analysis for football fans.
-    </p>
-  </div>
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="🔎 Search team or league..."
+        onkeyup="searchMatches()"
+    >
+
+    <div class="filters">
+        <button onclick="filterMatches('all')">All</button>
+        <button onclick="filterMatches('low')">🟢 Low Risk</button>
+        <button onclick="filterMatches('medium')">🟡 Medium</button>
+        <button onclick="filterMatches('high')">🔴 High Risk</button>
+    </div>
+
+    <div id="matches">
+
+        <div class="match" data-risk="low">
+            <div class="match-header">
+                <div>
+                    <div class="league">Premier League</div>
+                    <div class="teams">Team A vs Team B</div>
+                </div>
+                <div class="time">19:00</div>
+            </div>
+
+            <div class="prediction">
+                <strong>Prediction:</strong> Over 1.5 Goals
+                <br>
+                <strong>Confidence:</strong> 78%
+                <br>
+                <span class="badge low">LOW RISK</span>
+            </div>
+        </div>
+
+        <div class="match" data-risk="medium">
+            <div class="match-header">
+                <div>
+                    <div class="league">La Liga</div>
+                    <div class="teams">Team C vs Team D</div>
+                </div>
+                <div class="time">20:30</div>
+            </div>
+
+            <div class="prediction">
+                <strong>Prediction:</strong> 1X
+                <br>
+                <strong>Confidence:</strong> 74%
+                <br>
+                <span class="badge medium">MEDIUM RISK</span>
+            </div>
+        </div>
+
+        <div class="match" data-risk="low">
+            <div class="match-header">
+                <div>
+                    <div class="league">Serie A</div>
+                    <div class="teams">Team E vs Team F</div>
+                </div>
+                <div class="time">21:00</div>
+            </div>
+
+            <div class="prediction">
+                <strong>Prediction:</strong> Under 4.5 Goals
+                <br>
+                <strong>Confidence:</strong> 82%
+                <br>
+                <span class="badge low">LOW RISK</span>
+            </div>
+        </div>
+
+        <div class="match" data-risk="high">
+            <div class="match-header">
+                <div>
+                    <div class="league">Champions League</div>
+                    <div class="teams">Team G vs Team H</div>
+                </div>
+                <div class="time">22:00</div>
+            </div>
+
+            <div class="prediction">
+                <strong>Prediction:</strong> Correct Score 2-1
+                <br>
+                <strong>Confidence:</strong> 35%
+                <br>
+                <span class="badge high">HIGH RISK</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- MARKET GUIDE -->
+<div class="section">
+    <h2>📚 Betting Market Guide</h2>
+
+    <div class="explain">
+        <strong>1X</strong>
+        Home team wins OR the match ends in a draw.
+    </div>
+
+    <div class="explain">
+        <strong>X2</strong>
+        Away team wins OR the match ends in a draw.
+    </div>
+
+    <div class="explain">
+        <strong>Over 1.5 Goals</strong>
+        There must be at least 2 goals in the match.
+    </div>
+
+    <div class="explain">
+        <strong>Under 4.5 Goals</strong>
+        There must be 4 goals or fewer.
+    </div>
+
+    <div class="explain">
+        <strong>Both Teams To Score</strong>
+        Both teams must score at least one goal.
+    </div>
+</div>
+
+<!-- WARNING -->
+<div class="section">
+    <div class="warning">
+        ⚠️ <strong>Important:</strong>
+        Predictions are estimates, not guaranteed results.
+        Football can be unpredictable. Never stake money you cannot afford to lose.
+    </div>
+</div>
 
 </div>
 
 <footer>
-  <p>STV Betting Tips © 2026</p>
-  <p>Bet responsibly.</p>
+    <strong>STV Betting Tips</strong>
+    <br><br>
+    Football predictions & educational information.
+    <br>
+    © <span id="year"></span> STV Betting Tips
 </footer>
 
+<script>
+
+/* Today's date */
+const date = new Date();
+
+document.getElementById("today").textContent =
+    date.toLocaleDateString("en-GB", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+
+document.getElementById("year").textContent =
+    date.getFullYear();
+
+
+/* Search matches */
+function searchMatches() {
+
+    const search =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    const matches =
+        document.querySelectorAll(".match");
+
+    let visible = 0;
+
+    matches.forEach(match => {
+
+        const text =
+            match.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+            match.style.display = "block";
+            visible++;
+        } else {
+            match.style.display = "none";
+        }
+
+    });
+
+}
+
+
+/* Risk filter */
+function filterMatches(risk) {
+
+    const matches =
+        document.querySelectorAll(".match");
+
+    matches.forEach(match => {
+
+        if (risk === "all") {
+            match.style.display = "block";
+        }
+
+        else if (
+            match.dataset.risk === risk
+        ) {
+            match.style.display = "block";
+        }
+
+        else {
+            match.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
+
 </body>
-  </html>
+</html>
